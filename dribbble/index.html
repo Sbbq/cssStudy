@@ -83,7 +83,6 @@
 		display: block;
 		width: 100%;
 		background-color: #f4f4f4;
-		overflow: hidden;
 	}
 	#full-tabs{
 		height: 50px;
@@ -135,21 +134,17 @@
 		padding: 30px 30px 40px 30px;
 		width: 100vw;
 		box-sizing: border-box;
-		overflow: hidden;
-
 	}
 	.content{
 		position: relative;
 		margin: 0 auto;
 		padding: 0;
 		font-size: 14px;
-		overflow: hidden;
 	}
 	.dribbblegroup{
 		margin: 0 auto;
 		max-width: 1750px;
 		position: relative;
-		overflow: hidden;
 		padding: 0;
 	}
 	.group{
@@ -159,7 +154,13 @@
 		padding: 0;
 		position: relative;
 	}
-
+	.dribbblegroup:after{
+		content: ",";
+		clear: both;
+		height: 0;
+		visibility: hidden;
+		display: block;
+	}
 	.dribbble{
 		position: relative;
 		clear: left;
@@ -297,7 +298,7 @@
 		</div>
 		<div class="wrap-inner">
 			<div class="content">
-				<ol class="dribbblegroup">
+				<ol class="dribbblegroup ">
 					<li class="group">
 						<div class="dribbble">
 							<div class="dribbble-shot">
