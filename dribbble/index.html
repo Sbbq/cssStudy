@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dribbble</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<style type="text/css">
+	body,ul,li{
+		margin: 0;
+		padding: 0;
+		font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	ol,ul{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+		color: #111;
+	}
+	#header{
+		height: 56px;
+		width: 100%;
+		background-color: #444;
+	}
+	#header-inner{
+		padding: 0 20px;
+	}
+	#logo{
+		float: left;
+		padding-top: 20px;
+	}
+	#nav>li{
+		float: left;
+		padding-left: 20px;
+		line-height: 1;
+	}
+	#nav>li>a{
+		color: #999;
+		height: 56px;
+		line-height: 56px;
+	}
+	#nav>li:hover>a{
+		color: #fff;
+	}
+	.tabs{
+		display: none;
+		position: absolute;
+		background-color: #444;
+		width: 150px;
+		font-size: 13px;
+		margin-left: -15px;
+		padding: 0 0 10px 0;
+		border-radius: 0 0 5px 5px;
+		background-clip: padding-box;
+		z-index: 999;
+	}
+	#nav>li:hover>ul{
+		display: block;
+	}
+	.tabs li{
+		clear: left;
+		margin: 0;
+		width: 100%;
+	}
+	.tabs li a{
+		display: block;
+		color: #999;
+		font-size: 13px;
+		font-weight: normal;
+		line-height: 1.3;
+		padding: 5px 15px;
+	}
+	.tabs li:hover a{
+		background-color: #bbb;
+		color: #fff;
+	}
+	.spreate{
+		padding-top: 5px;
+		border-top: 1px solid rgba(255,255,255,0.15);
+	}
+	#wrap{
+		position: relative;
+		display: block;
+		width: 100%;
+		background-color: #f4f4f4;
+		overflow: hidden;
+	}
+	#full-tabs{
+		height: 50px;
+		width: 100%;
+		border-bottom: 1px solid #e5e5e5;
+		background-color: rgba(255,255,255,0.6);
+	}
+	.full-tabs-link{
+		text-align: center;
+	}
+	.full-tabs-link>li{
+		display: inline-block;
+		padding-right: 10px;
+	}
+	.full-tabs-link>li>a{
+		height: 50px;
+		line-height: 50px;
+	}
+	.filter{
+		display: none;
+		position: absolute;
+		box-shadow: 1px 2px 2px rgba(0,0,0,0.2);
+		margin-left: -15px;
+		width: 200px;
+		border-radius: 0 0 5px 5px;
+		padding:6px 0 10px 0;
+		z-index: 999;
+		background-color: #fbfbfb;
+	}
+	.filter li{
+	}
+	.full-tabs-link>li:hover>ul{
+		display: block;
+	}
+	.filter li:hover>a{
+		background-color: #999;
+		color: rgba(1,1,1,0.6);
+	}
+	.filter li a{
+		display: block;
+		font-size: 13px;
+		font-weight: normal;
+		line-height: 1.3;
+		padding: 5px 15px;
+		text-align: left;
+		color: #999;
+	}
+	.wrap-inner{
+		padding: 30px 30px 40px 30px;
+		width: 100vw;
+		box-sizing: border-box;
+		overflow: hidden;
+
+	}
+	.content{
+		position: relative;
+		margin: 0 auto;
+		padding: 0;
+		font-size: 14px;
+		overflow: hidden;
+	}
+	.dribbblegroup{
+		margin: 0 auto;
+		max-width: 1750px;
+		position: relative;
+		overflow: hidden;
+		padding: 0;
+	}
+	.group{
+		float: 	left;
+		margin: 0 15px 30px 15px;
+		width: calc(100% / 7 - 30px);
+		padding: 0;
+		position: relative;
+	}
+
+	.dribbble{
+		position: relative;
+		clear: left;
+		background: #fff;
+		border-radius: 2px;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+	}
+	.dribbble-shot{
+		padding: 10px;
+	}
+	.dribbble-img{
+		max-width: 100%;
+		height: 0;
+		padding-bottom: 75%;
+	}
+	h2{
+		max-height: 16px;
+		margin: 10px 0 0 0;
+		padding: 0 0 0 10px;
+		font-size: 13px;
+		font-weight: 500;
+		line-height: 1.4;
+		color: #999;
+		vertical-align: middle;
+	}
+</style>
+</head>
+<body>
+	<div id="header" class>
+		<div id="header-inner">
+			<div id=logo>
+				<a href="/">
+					<img src="img/logo1.png">
+				</a>
+			</div>
+			<ul id="nav" role="navigation">
+				<li >
+					<a href="/">Shots</a>
+					<ul class="tabs">
+						<li>
+							<a href="javascript;">
+								Popular Shots
+							</a>
+						</li>
+						<li>
+							<a href="javascript;">
+								Recent Shots
+							</a>
+						</li>
+						<li class="spreate">
+							<a href="javascript;">
+								Debuts
+							</a>
+						</li>
+						<li>
+							<a href="javascript;">
+								PlayOffs
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li >
+					<a href="/">Shots</a>
+					<ul class="tabs">
+						<li>
+							<a href="javascript;">
+								Popular Shots
+							</a>
+						</li>
+						<li>
+							<a href="javascript;">
+								Recent Shots
+							</a>
+						</li>
+						<li class="spreate">
+							<a href="javascript;">
+								Debuts
+							</a>
+						</li>
+						<li>
+							<a href="javascript;">
+								PlayOffs
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li >
+					<a href="/"><span>More</span></a>
+					<ul class="tabs">
+						<li>
+							<a href="javascript;">
+								Popular Shots
+							</a>
+						</li>
+						<li>
+							<a href="javascript;">
+								Recent Shots
+							</a>
+						</li>
+						<li class="spreate">
+							<a href="javascript;">
+								Debuts
+							</a>
+						</li>
+						<li>
+							<a href="javascript;">
+								PlayOffs
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="wrap">
+		<div id="full-tabs">
+			<ul class="full-tabs-link">
+				<li class="more active">
+					<a href="">Popular</a>
+					<ul class="filter">
+						<li class="sub"><a href="">a</a></li>
+						<li class="sub"><a href="">a</a></li>
+						<li class="sub"><a href="">a</a></li>
+					</ul>
+				</li>
+				<li class="more active">
+					<a href="">Now</a>
+					<ul class="filter">
+						<li class="sub"><a href="">a</a></li>
+						<li class="sub"><a href="">a</a></li>
+						<li class="sub"><a href="">a</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="wrap-inner">
+			<div class="content">
+				<ol class="dribbblegroup">
+					<li class="group">
+						<div class="dribbble">
+							<div class="dribbble-shot">
+								<div class="dribbble-img">
+									<img src="img/12_teaser.png">
+								</div>
+							</div>
+						</div>
+						<h2>aaa</h2>
+					</li>
+					<li class="group">
+						<div class="dribbble">
+							<div class="dribbble-shot">
+								<div class="dribbble-img">
+									<img src="img/12_teaser.png">
+								</div>
+							</div>
+						</div>
+						<h2>aaa</h2>
+					</li>
+					<li class="group">
+						<div class="dribbble">
+							<div class="dribbble-shot">
+								<div class="dribbble-img">
+									<img src="img/12_teaser.png">
+								</div>
+							</div>
+						</div>
+						<h2>aaa</h2>
+					</li>
+					<li class="group">
+						<div class="dribbble">
+							<div class="dribbble-shot">
+								<div class="dribbble-img">
+									<img src="img/12_teaser.png">
+								</div>
+							</div>
+						</div>
+						<h2>aaa</h2>
+					</li>
+					<li class="group">
+						<div class="dribbble">
+							<div class="dribbble-shot">
+								<div class="dribbble-img">
+									<img src="img/12_teaser.png">
+								</div>
+							</div>
+						</div>
+						<h2>aaa</h2>
+					</li>
+					<li class="group">
+						<div class="dribbble">
+							<div class="dribbble-shot">
+								<div class="dribbble-img">
+									<img src="img/12_teaser.png">
+								</div>
+							</div>
+						</div>
+						<h2>aaa</h2>
+					</li>
+					<li class="group">
+						<div class="dribbble">
+							<div class="dribbble-shot">
+								<div class="dribbble-img">
+									<img src="img/12_teaser.png">
+								</div>
+							</div>
+						</div>
+						<h2>aaa</h2>
+					</li>
+					<li class="group">
+						<div class="dribbble">
+							<div class="dribbble-shot">
+								<div class="dribbble-img">
+									<img src="img/12_teaser.png">
+								</div>
+							</div>
+						</div>
+						<h2>aaa</h2>
+					</li>
+					<li class="group">
+						<div class="dribbble">
+							<div class="dribbble-shot">
+								<div class="dribbble-img">
+									<img src="img/12_teaser.png">
+								</div>
+							</div>
+						</div>
+						<h2>aaa</h2>
+					</li>
+					<li class="group">
+						<div class="dribbble">
+							<div class="dribbble-shot">
+								<div class="dribbble-img">
+									<img src="img/12_teaser.png">
+								</div>
+							</div>
+						</div>
+						<h2>aaa</h2>
+					</li>
+					<li class="group">
+						<div class="dribbble">
+							<div class="dribbble-shot">
+								<div class="dribbble-img">
+									<img src="img/12_teaser.png">
+								</div>
+							</div>
+						</div>
+						<h2>aaa</h2>
+					</li>
+					<li class="group">
+						<div class="dribbble">
+							<div class="dribbble-shot">
+								<div class="dribbble-img">
+									<img src="img/12_teaser.png">
+								</div>
+							</div>
+						</div>
+						<h2>aaa</h2>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
