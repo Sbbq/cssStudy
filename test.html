@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <style>
+    	.backimg{
+    		background-image: url("1.png");
+    		background-repeat: no-repeat;
+    		background-position: 40% 30%;
+    		position: absolute;
+    		top: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 100%;
+    	}
+    	#main{
+    		position: absolute;
+    		top: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 100%;
+    	}
+    </style>
+</head>
+<body>
+	<div class="backimg">
+		<div id="main"></div>
+	</div>
+    <script type="text/javascript">
+    	var myChart = echarts.init(document.getElementById('main'));
+    	var option = {
+    		tooltip:{
+    			formatter:"{c}"
+    		},
+            xAxis: {
+            	show:false,
+            	min:0,
+            	max:100,
+            },
+            yAxis: {
+            	show:false,
+            	min:0,
+            	max:100,
+            },
+            series: [{
+                type: 'line',
+                symbolSize:0,
+                lineStyle:{
+                	type:"dashed",
+                },
+                data: [[28,50],[29,60],[32,61.5],[34,71],[36.5,72],[38,71.5],[39,76],[40.8,72],[44,72.3],[45,75],[46.8,74],[51.6,74.5],[53,74.5],[53.3,77],[57,77.3],[58,75],[59,74.5],[60,69.8],[63.5,69],[66,70]],
+                animationDuration:3000,
+            },
+            {
+                type: 'lines',
+
+			        lineStyle: {
+	                normal: {
+	                    width: 0
+	                }
+	            },
+	            effect: {
+	                constantSpeed: 200,
+	                delay:3000,
+	                show: true,
+	                trailLength: 0.1,
+	                symbolSize: 6.5,
+	                loop:false,
+	                color:"#22eeaa"
+	            },
+		        coordinateSystem: 'cartesian2d',
+		        data: [{
+                	coords: [[28,50],[29,60],[32,61.5],[34,71],[36.5,72],[38,71.5],[39,76],[40.8,72],[44,72.3],[45,75],[46.8,74],[51.6,74.5],[53,74.5],[53.3,77],[57,77.3],[58,75],[59,74.5],[60,69.8],[63.5,69],[66,70]]
+            	}],
+		        polyline: true,
+		        zlevel: -2,
+		    }
+		    ]
+        };
+
+        myChart.setOption(option);
+        window.onresize=myChart.resize;
+    </script>
+</body>
+</html>
